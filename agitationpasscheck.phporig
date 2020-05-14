@@ -1,0 +1,112 @@
+<?ob_start()?>
+<?session_start();?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type"content="text/html;
+charset=utf-8"/>
+<head>
+<title>datalog.php </title>
+<!--<link 	rel = "stylesheet"
+		type = "text/css"
+		href = "datalog.css">
+-->
+<style type="text/css">
+</style>
+</head>
+<body><?
+//if host, user or database password is changed change script on lines 28  54-58 of this file
+$_SESSION['passwordcheck']='fail';
+$filename =$_REQUEST["submit"];
+	if ($filename=="Submit Username and Password"){
+		$_SESSION[graphical_interface]=$_REQUEST[graphical_interface];
+		$mail=$_REQUEST["mail"];
+		$password=$_REQUEST["password"];
+		if($mail!=""&&$password!=""){
+		#$conn=mysqli_connect("localhost","root","") or die(mysqli_error());
+		$conn=mysqli_connect("localhost","admin","abait") or die(mysqli_error());
+		$password=mysqli_real_escape_string($password,$conn);
+		$mail=mysqli_real_escape_string($mail,$conn);
+		$sql1="SELECT * FROM personaldata WHERE password='$password'";
+		mysqli_select_db("agitation");
+		$session1=mysqli_query($sql1,$conn);
+			if($row1=mysqli_fetch_assoc($session1)){
+					if($row1['accesslevel']=='globaladmin'&&$row1['mail']==$mail){
+						$_SESSION['adminfirst']=$row1['first'];
+						$_SESSION['adminlast']=$row1['last'];
+						$_SESSION['cgfirst'] = '';
+						$_SESSION['cglast'] = '';
+						$_SESSION['personaldatakey']=$row1['personaldatakey'];
+						$nextfile="adminhome.php";
+						$_SESSION['passwordcheck']='pass';
+						$_SESSION['privilege']='globaladmin';
+						$_SESSION['Target_Population']='all';
+					}
+					elseif($row1['accesslevel']=='admin'&&$row1['mail']==$mail){
+						$_SESSION['adminfirst']=$row1['first'];
+						$_SESSION['adminlast']=$row1['last'];
+                                                $_SESSION['cgfirst'] = '';
+                                                $_SESSION['cglast'] = '';
+						$_SESSION['personaldatakey']=$row1['personaldatakey'];
+						$nextfile="adminhome.php";
+						$_SESSION['passwordcheck']='pass';
+						$_SESSION['privilege']='admin';
+						$_SESSION['privilegekey']=$row1['privilegekey'];
+						$_SESSION['Target_Population']=$row1['Target_Population'];
+						//following makes an array of scale names
+						$sql3="SELECT * FROM scale_table WHERE Target_Population='$_SESSION[Target_Population]'";
+						$session3=mysqli_query($sql3,$conn);
+						$scale_holder='';
+							while($row3=mysqli_fetch_assoc($session3)){
+								if($row3[scale_name]!=$scale_holder){
+									$scale_array[]=$row3[scale_name];
+								}
+								$scale_holder=$row3[scale_name];
+							}
+						$_SESSION[scale_array]=$scale_array;
+					}
+					elseif($row1['accesslevel']=='caregiver'&&$row1['mail']==$mail){
+						$nextfile="caregiverhome.php";
+						$_SESSION['passwordcheck']='pass';
+						$_SESSION['personaldatakey']=$row1['personaldatakey'];
+						$_SESSION['password']=$password;
+						$_SESSION['cgfirst']=$row1['first'];
+						$_SESSION['cglast']=$row1['last'];
+						$_SESSION['privilege']='caregiver';
+						$_SESSION['privilegekey']=$row1['privilegekey'];
+						$_SESSION['Target_Population']=$row1['Target_Population'];
+						//following makes an array of scale names
+						$sql3="SELECT * FROM scale_table WHERE Target_Population='$_SESSION[Target_Population]'";
+						$session3=mysqli_query($sql3,$conn);
+						$scale_holder='';
+							while($row3=mysqli_fetch_assoc($session3)){
+								if($row3[scale_name]!=$scale_holder){
+									$scale_array[]=$row3[scale_name];
+								}
+								$scale_holder=$row3[scale_name];
+							}
+						$_SESSION[scale_array]=$scale_array;
+					}else{$nextfile='ABAIT_Home.php';
+				}
+			}else{$nextfile='ABAIT_Home.php';
+		}
+	}
+	else{$nextfile='ABAIT_Home.php';
+		}
+	}
+	if($_SESSION['passwordcheck']=='pass'){
+			//$_SESSION['user']='micbot10_abait';
+			//$_SESSION['hostname']='mysql4.freehostia.com';
+			//$_SESSION['mysqlpassword']='alaska';
+			//$_SESSION['database']='micbot10_abait';
+			$_SESSION['hostname']='localhost';
+			#$_SESSION['user']='root';
+			#$_SESSION['mysqlpassword']='';
+			$_SESSION['user']='admin';
+			$_SESSION['mysqlpassword']='abait';
+			$_SESSION['database']='agitation';
+	}
+	header("Location:$nextfile");
+	?>
+	</body>
+	</html>

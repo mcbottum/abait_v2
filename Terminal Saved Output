@@ -1,0 +1,332 @@
+-rw-r--r-- 1 root       root    11388 Dec 22  2017 updateMembers_bac.php
+-rw-r--r-- 1 root       root    12886 Feb  5  2018 updateMembers.php
+-rw-r--r-- 1 4294967294    80     704 Sep  5  2010 Vocalizations.png
+-rw-r--r-- 1        501    80    7085 Oct  6  2010 XAMPP Control
+[root@abait-2 agitation]# vi logout.php 
+[root@abait-2 agitation]# vi caregiverhome.php 
+[root@abait-2 agitation]# vi caregiverhome.php 
+[root@abait-2 agitation]# vi agitationpasscheck.php
+[root@abait-2 agitation]# Shared connection to 192.168.99.12 closed.
+michael-bottums-MacBook-Pro:agitation michaelbottum$ ssh root@192.168.99.12
+root@192.168.99.12's password: 
+Last login: Tue Nov 27 12:59:31 2018 from 172.29.152.2
+[root@abait-2 ~]# tail -f /opt/lampp/logs/php_error_log 
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 262
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Undefined variable: sn_array in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 262
+[27-Nov-2018 14:07:10 America/Chicago] PHP Warning:  in_array() expects parameter 2 to be array, null given in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 262
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 262
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 262
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[27-Nov-2018 14:07:10 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[27-Nov-2018 14:07:27 America/Chicago] PHP Notice:  Undefined index: graphical_interface in /opt/lampp/htdocs/agitation/agitationpasscheck.php on line 33
+[27-Nov-2018 14:09:54 America/Chicago] PHP Notice:  Undefined index: graphical_interface in /opt/lampp/htdocs/agitation/agitationpasscheck.php on line 33
+Shared connection to 192.168.99.12 closed.
+michael-bottums-MacBook-Pro:agitation michaelbottum$ source ~/src/swoop/bin/activate
+You have new mail in /var/mail/michaelbottum
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ sudo bash VM_reset.sh hd 114 115 116 117
+Password:
+/usr/local/bin/VM_reset.sh: line 1: .hd#!/bin/bash: No such file or directory
+
+The following script will;
+    reset VMs to BaseInstall.
+    Sample run from command line:
+	  sudo bash VM_reset.sh hd 114 115 116
+    first arg is locator, second is final octet of target IP (see script)
+
+## Enter (1) to begin
+1
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.114 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.114
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.115 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.115
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.116 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.116
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.117 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.117
+
+
+## All Re-Set ##
+## Next ## -->   ssh swoopadmin@...
+
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ sudo bash VM_reset.sh hd 114 115 116 117
+Password:
+/usr/local/bin/VM_reset.sh: line 1: .hd#!/bin/bash: No such file or directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following script will;
+    reset VMs to BaseInstall.
+    Sample run from command line:
+	  sudo bash VM_reset.sh hd 114 115 116
+    first arg is locator, second is final octet of target IP (see script)
+
+## Enter (1) to begin
+1
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.114 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.114
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.115 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.115
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.116 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.116
+Trying to connect to VCENTER SERVER . . .
+Connected to VCENTER SERVER !
+Reverting RH7.4-TEST-STIG-spin-Mike.117 to snapshot BaseInstall
+RESET RH7.4-TEST-STIG-spin-Mike.117
+
+
+## All Re-Set ##
+## Next ## -->   ssh swoopadmin@...
+
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_residentdata_log.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+ABAIT_residentdata_log.php                                100% 3624     1.1MB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_resident_map_log.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+ABAIT_resident_map_log.php                                100% 4056   844.6KB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_scale_datalog.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+ABAIT_scale_datalog.php                                   100% 5403     1.0MB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ ssh root@192.168.99.12
+root@192.168.99.12's password: 
+Last login: Tue Nov 27 14:08:41 2018 from 172.29.152.2
+[root@abait-2 ~]# cd /opt/lampp/htdocs/agitation
+[root@abait-2 agitation]# cd ../../
+[root@abait-2 lampp]# tail -f l
+lampp     lib/      libexec/  licenses/ logs/     
+[root@abait-2 lampp]# tail -f l
+lampp     lib/      libexec/  licenses/ logs/     
+[root@abait-2 lampp]# tail -f logs/php_error_log 
+[28-Nov-2018 15:29:23 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:27 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:27 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:27 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:27 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:32 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:32 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:32 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:29:32 America/Chicago] PHP Notice:  Use of undefined constant scale_name - assumed 'scale_name' in /opt/lampp/htdocs/agitation/resident_map.php on line 325
+[28-Nov-2018 15:31:33 America/Chicago] PHP Notice:  Undefined index: graphical_interface in /opt/lampp/htdocs/agitation/agitationpasscheck.php on line 33
+[28-Nov-2018 15:35:54 America/Chicago] PHP Notice:  Undefined index: graphical_interface in /opt/lampp/htdocs/agitation/agitationpasscheck.php on line 33
+[28-Nov-2018 15:35:56 America/Chicago] PHP Notice:  Undefined index: graphical_interface in /opt/lampp/htdocs/agitation/agitationpasscheck.php on line 33
+[28-Nov-2018 15:35:58 America/Chicago] PHP Notice:  Undefined index: graphical_interface in /opt/lampp/htdocs/agitation/agitationpasscheck.php on line 33
+[28-Nov-2018 15:36:02 America/Chicago] PHP Notice:  Use of undefined constant sql - assumed 'sql' in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 122
+[28-Nov-2018 15:36:02 America/Chicago] PHP Notice:  Undefined index: residentkey in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 165
+[28-Nov-2018 15:36:02 America/Chicago] PHP Notice:  Use of undefined constant sql - assumed 'sql' in /opt/lampp/htdocs/agitation/ABAIT_quick_scales.php on line 220
+[28-Nov-2018 15:36:26 America/Chicago] PHP Notice:  Undefined index: graphical_interface in /opt/lampp/htdocs/agitation/agitationpasscheck.php on line 33
+^C
+[root@abait-2 lampp]# logout
+Shared connection to 192.168.99.12 closed.
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp adminhome.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+adminhome.php                                             100% 4026   968.9KB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp adminhome.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+Permission denied, please try again.
+root@192.168.99.12's password: 
+adminhome.php                                             100% 4023     1.2MB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT.css root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+ABAIT.css                                                 100% 8172   593.7KB/s   00:00    
+You have new mail in /var/mail/michaelbottum
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp caregiverhome.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+caregiverhome.php                                         100% 7271     1.6MB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp resident_map.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+resident_map.php                                          100%   16KB   1.7MB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp caregiverhome.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+caregiverhome.php                                         100% 7271     1.8MB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ ssh root@192.168.99.12
+root@192.168.99.12's password: 
+Last login: Wed Nov 28 15:32:08 2018 from 172.29.152.2
+[root@abait-2 ~]# cd /opt/lampp/htdocs/agitation
+[root@abait-2 agitation]# ls
+30_day_analysis.php                     agitation.css
+ABAIT_admin.css                         agitationpasscheck.php
+ABAIT_administrator_log.php             agitationpasscheck.phpbac
+ABAIT_admin_log.php                     agitation_scale_agressivness.php
+ABAIT_admin_report.php                  Agressiveness.png
+ABAIT_admin_report.php copy             Attitude.png
+ABAIT_analysis.php                      behavior_items.php
+ABAIT_BadgerPrairie.php                 bgrnd.png
+ABAIT_Bluffview.php                     Caregiver_Buttons_wwhite4.png
+ABAIT_buildpage_function.php            Caregiver_Buttons_wwhite.png
+ABAIT_caregiver_episode_analysis        Caregiver_Buttons_wwhite.svg
+ABAIT_caregiver_episode_analysis.php    caregiverdata.php
+ABAIT_caregiver_log.php                 caregiverhome.css
+ABAIT_careprovider_review_analysis.php  caregiverhome.php
+ABAIT_careprovider_review.php           choose_ABAIT_scale.php
+ABAIT_choose_behavior.php               chooseresident_for_globalanalysis.php
+ABAIT_Contact.php                       chooseresident_for_mapping.php
+ABAIT_create_map1.php                   chooseresident_for_map_review.php
+ABAIT_create_mapbackup.php              chooseresident_map.php
+ABAIT_create_map_log.php                chooseresident.php
+ABAIT_create_map.php                    chooseresident_PRN_effect
+ABAIT_create_map_review.php             chooseresident_PRN_effect.php
+abait.css                               chooseresident_scale_agressive.php
+ABAIT.css                               chooseresident_scale_motor.php
+ABAITdataflowmenu.png                   chooseresident_scale.php
+ABAITdataflow.png                       chooseresident_scale_resistance.php
+ABAITdatamenu500.png                    chooseresident_scale_vocalization.php
+ABAITdatamenu.png                       choose_trigger_bac.php
+ABAIT_Education2.php                    choose_trigger.php
+ABAIT_education.html                    datetimepicker-master
+ABAIT_Education_Module.pdf              episode_historical_review_analysis.php
+ABAIT_education.php                     episode_historical_review.php
+ABAIT_education_triggers.php            fsadminbg.png
+ABAITflowchart2.png                     fsbgadmin2.png
+ABAITflowchart_one_button500.png        fsbgadmin.png
+ABAITflowchart.png                      fsbgrnd.png
+ABAITflowchartup.png                    global_analysis.php
+ABAIT_function_file.php                 globalnavbg.png
+ABAIT_generic.php                       greenbgnd.png
+ABAIT_home.css                          greybg.png
+ABAIThome.css                           greyline.png
+ABAIT_Home.css                          Images
+ABAIThome.html                          Images.tar.gz
+ABAIT_home.php                          login.png
+ABAIT_Home.php                          logout.php
+ABAIT_info.html                         Motor.png
+ABAIT_log.php                           newadministratorlist.php
+ABAITmenu.png                           newadministrator.php
+ABAIT_newcaregiver_log.php              newcaregiver.html
+ABAIT_Privacy_Policy.html               newcaregiver.php
+ABAIT_provider_episodes.php             now.png
+ABAIT_quick_scales.php                  passwordtaken.php
+ABAIT_residentdata_log.php              person-at-the-window.jpg
+ABAIT_resident_map_log.php              Phase1.pdf
+ABAIT_scale_bac.php                     Phase2.pdf
+ABAIT_Scale_Create1.php                 Phase3.pdf
+ABAIT_Scale_Create_Log_Comments.php     picture.png
+ABAIT_Scale_Create_Log.php              PRN_effect_log.php
+ABAIT_Scale_Create.php                  PRN_effect.php
+ABAIT_scale_datalog.php                 PRN_review_log.php
+ABAIT_Scale_Edit_Log.php                PRN_review.php
+ABAIT_Scale_Edit.php                    removeMembers.php
+ABAIT_Scale_Log.php                     residentdata.html
+ABAIT_scale.php                         residentdata.php
+ABAIT_Scale_Setup.php                   resident_fact_sheet.php
+ABAIT_scales.php                        resident_fact_sheet_table.php
+ABAIT_Scale_Trigger_Log.php             resident_for_prn.php
+ABAIT_setup.php                         resident_map_backup.php
+ABAITshortmenu.png                      resident_map_old.php
+abaitsolutions.css                      resident_map.php
+abaitsolutions.php                      resident_mapping.sql
+ABAITtextfile.txt                       resident_map_trynew.php
+ABAIT_trigger_edit_log.php              resident_scale.php
+ABAIT_Trigger_Edit_Log.php              Resistance.png
+ABAIT_trigger_edit.php                  select_if_now.png
+ABAIT_trigger_intervention_catalog.php  Skill.png
+ABAIT_trigger.php                       Tardy.png
+ABAIT_triggers_and_interventions.php    triggers_and_inteventions.csv
+adABAIT.css                             updateMembers_bac.php
+adminbg.png                             updateMembers.php
+adminhome.php                           Vocalizations.png
+administratordata.php                   XAMPP Control
+[root@abait-2 agitation]# vi caregiverhome.php
+[root@abait-2 agitation]# vi ABAIT.css
+[root@abait-2 agitation]# vi ABAIT_quick_scales.php 
+[root@abait-2 agitation]# vi ABAIT.css
+[root@abait-2 agitation]# vi caregiverhome.php
+[root@abait-2 agitation]# vi ABAIT.css
+[root@abait-2 agitation]# vi agitationpass^C
+[root@abait-2 agitation]# logout
+Shared connection to 192.168.99.12 closed.
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT.css root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+ABAIT.css                                                 100% 8198     1.5MB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_resident
+ABAIT_resident_map_log.php  ABAIT_residentdata_log.php  
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_resident
+ABAIT_resident_map_log.php  ABAIT_residentdata_log.php  
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_residentdata_log.php 
+usage: scp [-346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+           [-l limit] [-o ssh_option] [-P port] [-S program]
+           [[user@]host1:]file1 ... [[user@]host2:]file2
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_residentdata_log.php root@192.168.99.12:/opt/lampp/htdocs/agitation/
+root@192.168.99.12's password: 
+ABAIT_residentdata_log.php                                100% 3610   778.9KB/s   00:00    
+(swoop)michael-bottums-MacBook-Pro:agitation michaelbottum$ scp ABAIT_scale.php root@192.168.99.12:/opt/lampp/htdocs/agitation/

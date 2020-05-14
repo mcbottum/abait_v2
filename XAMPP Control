@@ -1,0 +1,209 @@
+<?
+include("ABAIT_function_file.php");
+session_start();
+if($_SESSION['passwordcheck']!='pass'){
+	header("Location:logout.php");
+	print $_SESSION['passwordcheck'];
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;
+	charset=utf-8" />
+<title>PRN Review</title>
+
+
+<script type="text/javascript" language="JavaScript">
+
+
+function checkRadio() {
+var PRN = document.getElementsByName('PRN');
+obj = document.getElementById("behavior_description");
+ for (var i=0; i <PRN.length; i++) {
+  if (PRN[i].checked) {
+obj.style.display = "block";
+} else {
+obj.style.display = "none";
+}
+}
+</script>
+
+
+<link 	rel = "stylesheet"
+		type = "text/css"
+		href = "ABAIT_admin.css">
+</head>
+<body>
+<div id="body" style="width:978px;margin: 0px auto 0px auto; text-align: left">
+<?
+if($_SESSION['cgfirst']!=""){
+	$cgfirst=$_SESSION['cgfirst'];
+	$cglast=$_SESSION['cglast'];
+	}else{
+	$cgfirst=$_SESSION['adminfirst'];
+	$cglast=$_SESSION['adminlast'];
+	}
+	print"<table width='100%'>\n";
+		print"<tr>\n";
+			print"<td valign='bottom' align='right'>$cgfirst Logged in</td>\n";
+		print"</tr>\n";
+	print"</table>\n";
+?>
+<div id="globalheader">
+	<ul id="globalnav">
+		<li id="gn-home"><a href='adminhome.php'</a></li>
+		<li id="gn-maps"><a href="caregiverhome.php">Maps</a></li>
+		<li id="gn-contact"><a href="mailto:bott1@centurytel.net?subject=Feedback on ABAIT">Contact ABAIT</a></li>
+		<li id="gn-logout"><a href="logout.php">Logout</a></li>
+	</ul>
+</div><!--/globalheader-->
+<form 	action = "PRN_effect.php"
+		method = "post">
+<fieldset>
+<?
+$filename=$_REQUEST[submit];
+if($filename!='Submit Post PRN Observations'){
+		$date=date('Y-m-d');
+		$date_start=date('Y-m-d',(strtotime('- 30 days')));
+		$title='Resident Receiving PRNs Within the Last Thirty Days';
+		$residentkey=$_REQUEST['resident_choice'];
+
+		$conn=mysqli_connect($_SESSION['hostname'],$_SESSION['user'],$_SESSION['mysqlpassword']) or die(mysqli_error());
+		mysqli_select_db($_SESSION['database']);
+		if($_SESSION[Target_Population]!='all'){
+		$sql1="SELECT * FROM residentpersonaldata WHERE Target_Population='$_SESSION[Target_Population]'";
+		}else{$sql1="SELECT * FROM residentpersonaldata";
+		}
+		$session1=mysqli_query($sql1,$conn);
+		$row1=mysqli_fetch_assoc($session1);
+		$sql_rm4="SELECT * from resident_mapping WHERE date > '$date_start' AND PRN='1'";
+		//$sql4="SELECT date, PRN, behavior, behavior_description, duration, intensity  FROM behavior_map_data WHERE residentkey='$residentkey' AND date > '$date_start' UNION SELECT date, PRN, behavior, behavior_description, duration, intensity FROM resident_mapping WHERE residentkey='$residentkey' AND date > '$date_start' ORDER by date";
+		$sql4="SELECT * FROM behavior_map_data WHERE  date > '$date_start' AND PRN='1'";
+		$sql5="SELECT * FROM scale_table WHERE Target_Population='$row1[Target_Population]'";
+		$session4=mysqli_query($sql4,$conn);
+		$session_rm4=mysqli_query($sql_rm4,$conn);
+		$session5=mysqli_query($sql5,$conn);
+		$row5=mysqli_fetch_assoc($session5);
+
+		$res_first=$row1['first'];
+		$res_last=$row1['last'];
+
+
+
+		print"<table width='100%'><tr ><td  align='left'>";
+		print"<h2> $title </h2>\n";
+		print"</td>";
+		?>
+
+		<td align='right'><input type='submit' value='Tap for more Info' onClick="alert('The effectivness of a PRN must be observed and recorded thirty minutes after it is administered.  Record observations here.');return false">
+			</td>
+			<td align='right'>
+<FORM>
+<INPUT TYPE="button" value="Print Page" onClick="window.print()">
+</FORM>
+			</td>
+			</tr>
+			<?
+
+
+				print"</td></tr>";
+			print"<tr><td>";
+		print"<h2> 30 Day Listing of PRN Episodes </h2>\n";
+			print"</td</tr>";
+					print "<table width='100%' class='center' border='1' bgcolor='white'>";
+						print"<tr><th>Choose Episode</th>\n";
+						print"<th>Episode Date</th>\n";
+						print"<th>Episode Time</th>\n";
+						print"<th>Resident Name</th>\n";
+						print"<tr>";
+						$session8=mysqli_query($sql_rm4,$conn);
+						while($row8=mysqli_fetch_assoc($session8)){
+							print"<tr>";
+							print"<td>";
+							if(!$row8[post_PRN_observation]){
+							//	print"<input name='episode_choice_rm' id='episode_choice' type='radio' value='$row8[mapkey]' onclick='radiocheck()'>";
+						//	}else{
+							//	print"recorded $row8[date]";
+							//}
+							print "</td>";
+							print"<td>$row8[date]</td>";
+							print"<td>$row8[time]</td>";
+							$session2=mysqli_query($sql1,$conn);
+							while($row2=mysqli_fetch_assoc($session2)){
+								if($row2[residentkey]==$row8[residentkey]){
+							print"<td>$row2[first] $row2[last]</td>";
+								}
+							}
+							print"</tr>";
+						}
+						$session6=mysqli_query($sql4,$conn);
+						while($row6=mysqli_fetch_assoc($session6)){
+							print"<tr>";
+							print"<td>";
+						//	if(!$row6[post_PRN_observation]){
+							//	print"<input name='episode_choice' id='episode_choice' type='radio' value='$row6[behaviormapdatakey]' onclick='radiocheck()'>";
+						//	}else{
+						//		print"recorded $row6[date]";
+						//	}
+							print"</td>";
+							print"<td>$row6[date]</td>";
+							print"<td>$row6[time]</td>";
+							$session3=mysqli_query($sql1,$conn);
+							while($row3=mysqli_fetch_assoc($session3)){
+								if($row3[residentkey]==$row6[residentkey]){
+							print"<td>$row3[first] $row3[last]</td>";
+								}
+							}
+							print"</tr>";
+						}
+					print"</table>";
+					print"</td></tr>";
+
+
+		?>
+
+<tr><td  colspan='4' align='center'>
+
+	<input	type = "text" name="post_PRN_observation" id="post_PRN_observation" style="display: none;" value="Enter specific description of behavior thirty minutes after PRN was administered." size="130"/>
+</td></tr>
+</table>
+			<div id = "submit">
+				<input 	type = "submit"
+						name = "submit"
+						value = "Submit Post PRN Observations">
+			</div>
+<?
+}elseif($filename=="Submit Post PRN Observations"){
+	$episode_choice_rm=$_REQUEST[episode_choice_rm];
+	$episode_choice=$_REQUEST[episode_choice];
+	$post_PRN_observation=$_REQUEST[post_PRN_observation];
+	if($episode_choice_rm){
+		$sql9="UPDATE resident_mapping SET post_PRN_observation='$post_PRN_observation' WHERE mapkey='$episode_choice_rm'";
+	}elseif($episode_choice){
+		$sql9="UPDATE behavior_map_data SET post_PRN_observation='$post_PRN_observation' WHERE behaviormapdatakey='$episode_choice'";
+	}
+	$conn=mysqli_connect($_SESSION['hostname'],$_SESSION['user'],$_SESSION['mysqlpassword']) or die(mysqli_error());
+	mysqli_select_db($_SESSION['database']);
+	$retval = mysqli_query( $sql9, $conn);
+	print "<br>The observation: <em> $post_PRN_observation</em> has been logged ${'comment_'.$j.'_'.$row[scale_name_key]}</br>";
+	if(! $retval ){
+		die('Could not connect: ' . mysqli_error());
+	}//end retval if
+
+
+?>
+
+			<div id = "submit">
+				<input 	type = "submit"
+						name = "submit"
+						value = "Return to Home Page">
+			</div>
+<?}//end comment if
+?>
+	</fieldset>
+	</form>
+<div id="footer"><p>&nbsp;Copyright &copy; 2010 ABAIT</p></div>
+</body>
+</html>
