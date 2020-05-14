@@ -87,7 +87,7 @@ window.onload = function() {
 	</div>
 </fieldset>
 		<form 	onsubmit='return formValidator()'
-				action = "agitationpasscheck.php" 
+				action = "ABAIT_passcheck_v2.php" 
 				method = "post">
 	<table class="center">
 		<tr>
