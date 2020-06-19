@@ -125,7 +125,7 @@ table.table {
   }
 table.table th{
     border: 1px solid black;
-    background-color:   #C8C8C8;
+    background-color:   #bbc6d1;
     text-align:center;
     padding: 5px;
   }
@@ -253,31 +253,7 @@ td.scaleIntensity{
 
 
 
-/* GLOBALHEADER */
-#globalheader { width: 490px; height: 38px; margin-top: 0px ; margin-bottom:10px ; position: relative; z-index: 9998; margin-left:auto; margin-right:auto; }
-#globalheader #globalnav { margin: 0; padding: 0; }
-#globalheader #globalnav li { display: block; }
-/*FOR centering large menu*/
-/*#globalheader #globalnav li a { float: left; width: 245px; height: 0; padding-top: 38px; overflow: hidden; }*/
-#globalheader #globalnav li a { float:left; width: 245px; height: 0; padding-top: 38px; overflow: hidden; }
-#globalheader #globalnav li a,
-#globalheader #globalnav a{ background-image: url(ABAITshortmenu.png); background-repeat: no-repeat; }
-/*BUTTONS */
-/*for short menue*/
-#globalheader #globalnav li#gn-home a { background-position: 0 0; }
-#globalheader #globalnav li#gn-logout a { background-position: -245px 0; }
 
-
-/* OVER STATES */
-/*for short menue*/
-#globalheader #globalnav li#gn-home a:hover { background-position: 0 -39px; }
-#globalheader #globalnav li#gn-logout a:hover { background-position: -245px -39px; }
-
-
-/* PRESSED STATES */
-/*for short menue*/
-#globalheader #globalnav li#gn-home a:active { background-position: 0 -78px; }
-#globalheader #globalnav li#gn-logout a:active { background-position: -245px -78px; }
 
 /*NAVBAR*/
   .page-header {

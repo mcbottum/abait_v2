@@ -55,13 +55,11 @@ set_css()
 		$names = build_page_pg();
 	?>
 	<h2 class="m-3" align='center'>
-		<?
-			print $names[0]."  ". $names[1]. "'s Care Provider Home Page";
-		?>
+		Carer Home Page
 	</h2>
 
 	<h2 class="m-2 p-2 footer_div" align='center'>
-		Care Provider Roles
+		Roles
 	</h2>
 
 	<table class='center'>

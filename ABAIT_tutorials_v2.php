@@ -55,14 +55,13 @@ print $_SESSION['SITE']
 </head>
 <body class="container">
 
-	<!-- <div class="container"> -->
-		<?			
-			$names = build_page_pg();
-		?>
 
-		<!-- <div class="page-header"> -->
-			<h2 class="m-3" align='center'>ABAIT Tutorials and Education Resources</h2>
-		<!-- </div> -->
+	<?			
+		$names = build_page_pg();
+	?>
+
+	<h2 class="m-3" align='center'>ABAIT Tutorials and Education Resources</h2>
+
 
 			<table class='center'>
 				<tr><td align='center'>
@@ -70,10 +69,10 @@ print $_SESSION['SITE']
 				</td></tr>
 
 				<tr><td align='center'>
-					<a class="btn  btn-lg btn-block p-5" href='ABAIT_triggers_and_interventions.php'>Catalog of Scale Triggers and Interventions</a>
+					<a class="btn  btn-lg btn-block p-5" href='ABAIT_triggers_and_interventions_v2.php'>Catalog of Scale Triggers and Interventions</a>
 				</td></tr>
 				<tr><td align='center'>
-					<a class="btn btn-lg btn-block p-5" href='resident_fact_sheet.php'>Quick Reference to Resident Triggers and Interventions</a>
+					<a class="btn btn-lg btn-block p-5" href='ABAIT_resident_fact_sheet_v2.php'>Quick Reference to Resident Triggers and Interventions</a>
 				</td></tr>
 			</table>
 
