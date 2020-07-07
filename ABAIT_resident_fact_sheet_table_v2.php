@@ -77,7 +77,6 @@ if($filename=="Submit Resident Choice"){
 
 		print "<table width='100%'><tr><td>";
 		if($residentkey=='all_residents'){
-			print"<div id='head'> $title for <em>All Residents</em></div>\n";
 			$sql1="SELECT * FROM behavior_maps WHERE Target_Population='$_SESSION[Population_strip]' ORDER BY behavior";
 			$sql4="SELECT * FROM resident_mapping WHERE Target_Population='$_SESSION[Population_strip]' ORDER BY behavior";
 			$session1=mysqli_query($conn,$sql1);
@@ -94,7 +93,6 @@ if($filename=="Submit Resident Choice"){
 			
 			$res_first=$row3['first'];
 			$res_last=$row3['last'];
-			print"<div id='head'> $title $res_first $res_last</div>\n";
 		}else{
 			print"A resident selection was not made, please return to the previous page";
 			die;
@@ -107,7 +105,13 @@ if($filename=="Submit Resident Choice"){
 				<?
 		if(mysqli_num_rows($session1)>1){
 			print "</td></tr></table>\n";	
-					
+
+                    if($residentkey=='all_residents'){
+                        print"<div id='head'> $title for <em>All Residents</em></div>\n";
+                    }else{
+                            print"<div id='head'> $title $res_first $res_last</div>\n";         
+                    }
+			
 			print "<table class='table-responsive table-hover' border='1' bgcolor='white'>";
 				print "<thead>";
 					print"<tr>\n";
